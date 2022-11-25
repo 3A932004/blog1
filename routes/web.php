@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show', 'store', 'update'
+]);
+
+//Route::resource('photos', PhotoController::class);
 //Route::get('/', function () {
 //    return view('welcome');
 //});
